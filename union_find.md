@@ -54,3 +54,15 @@ class UnionFind {
 };
 ```
 
+- if want to revert the last changes, should not include path compression (LC 2076)
+
+```c++
+int find(int p) {
+		while(parent[p] != p) {
+  			// parent[p] = parent[parent[p]];
+        p = parent[p];
+   	}
+    return p;
+}
+```
+
